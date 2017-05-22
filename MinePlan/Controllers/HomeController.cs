@@ -31,5 +31,10 @@ namespace MinePlan.Controllers
         {
             return View();
         }
+
+        public IActionResult Input()
+        {
+            return View();
+        }
     }
 }

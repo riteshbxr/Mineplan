@@ -1,0 +1,60 @@
+
+@{
+    ViewData["Title"] = "Input";
+}
+
+<h2>Input</h2>
+
+<div class="container-fluid" ng-app="myApp" ng-controller="myCtrl">
+
+    <ul class="nav nav-tabs" ng-click="ResetType()">
+        <li><a ng-click="Type='Truck'">Truck</a></li>
+        <li><a ng-click="Type='Truck Loss'">Truck Loss</a></li>
+        <li><a ng-click="Type='Shovel'">Shovel</a></li>
+        <li><a ng-click="Type='Shovel Loss'">Shovel Loss</a></li>
+        <li><a ng-click="Type='PayLoad'">PayLoad</a></li>
+    </ul>
+    <form>
+        <div class="form-group">
+            <label for="Pos">Position</label>
+            <input class="form-control" type="number" ng-model="Position" id="Pos">
+        </div>
+        <div class="form-group">
+            <label for="Min">Minimum</label>
+            <input class="form-control" type="number" ng-model="Min" id="Min">
+        </div>
+        <div class="form-group">
+            <label for="Type">Mode</label>
+            <input class="form-control" type="number" ng-model="Mode" id="Mode">
+        </div>
+        <div class="form-group">
+            <label for="Max">Maximum</label>
+            <input class="form-control" type="number" ng-model="Max" id="Max">
+        </div>
+        <div class="form-group">
+            <button class="btn btn-default" ng-click="add()">Add</button>
+        </div>
+        <div class="form-group">
+            <button class="btn btn-default" ng-click="ResetSession()">Reset</button>
+        </div>
+    </form>
+    <div class="table-responsive">
+        <table class="table">
+            <thead><tr><th>Min</th><th>Mode</th><th>Max</th></tr></thead>
+            <tbody>
+                <tr ng-repeat="x in Values track by $index">
+                    <th>{{x.Min}}</th>
+                    <th>{{x.Mode}}</th>
+                    <th>{{x.Max}}</th>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+@section Scripts{
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="~/js/myApp.js"></script>
+}
+
